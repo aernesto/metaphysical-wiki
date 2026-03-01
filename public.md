@@ -1,1 +1,1 @@
-Voir [[objectivité]]
+Voir [objectivité](objectivite.md)

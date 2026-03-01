@@ -1,0 +1,1 @@
+Voir [subjectivité](subjectivite.md)

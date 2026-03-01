@@ -1,3 +1,0 @@
-
-# Synonymes
-[[public]], [[objectif]] 

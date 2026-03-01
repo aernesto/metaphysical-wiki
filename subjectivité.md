@@ -1,3 +1,0 @@
-
-# Synonymes
-[[privé]]
