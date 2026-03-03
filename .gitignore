@@ -1,1 +1,6 @@
 .obsidian/
+*aux
+*pdf
+*out
+*log
+*gz

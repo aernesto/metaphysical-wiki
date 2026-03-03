@@ -1,2 +1,2 @@
 # Objectif
-Voir [objectivité](objectivite.md)
+Voir [public](public.md)
