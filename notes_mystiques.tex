@@ -35,13 +35,13 @@
 \newcommand{\mata}{$\mathcal{M}ata$}
 \newcommand{\dieu}{$\bigcirc$}
 % 1. Open cup with dark endpoints
-\newcommand{\symcup}{
-\begin{tikzpicture}[baseline=-0.5ex]
-
-  \node[darkdot] at (-0.8,0) {};
-  \node[darkdot] at (0.8,0) {};
-\end{tikzpicture}
+\newcommand{\percept}{%
+\tikz[baseline=-0.5ex,scale=.2]{
+  \draw[line width=0.8pt] (0,0) circle (0.8);
+  \node[darkdot] at (0,0.8) {};
+  \node[darkdot] at (0,-0.8) {};}
 }
+
 \newcommand{\sbj}{%
   \tikz[baseline=-0.5ex,scale=.2]{
   \draw[line width=0.8pt] (-0.8,0) arc (180:270:0.8);
@@ -58,6 +58,17 @@
     \node[darkdot] at (0,0.8) {};
   }%
 }
+\newcommand{\xen}{%
+  \tikz[baseline=-0.5ex,scale=.2]{
+    \draw[line width=.8pt] (-0.8,-0.8) arc (180:90:0.8);
+    \draw[line width=.8pt] (0,0) arc (90:0:0.8);
+  \draw[line width=0.8pt] (-0.8,0.8) arc (180:270:0.8);
+  \draw[line width=0.8pt] (0,0) arc (270:360:0.8);
+    \node[darkdot] at (0,0) {};
+  }%
+}
+
+
 % 3. Circle with pressure point
 \newcommand{\symcircle}{
 \begin{tikzpicture}[baseline=-0.5ex]
@@ -144,8 +155,6 @@
 Inline examples:
 
 \[
-\symcup \quad
-\obj \quad
 \symcircle \quad
 \syminf \quad
 \symdoubleloop
@@ -157,16 +166,6 @@ Inline examples:
 \symdoublecirc \quad
 \symcurvecross
 \]
-
-\section*{Mixed in Math Expressions}
-
-\[
-A \symcup B \qquad
-X \symcircvert Y \qquad
-f : \symdoubleloop \to \syminf
-\]
-
-
 \newpage
 
 
@@ -522,72 +521,83 @@ On ne perçoit \obj~que par \sbj
 
 % 25
 \begin{I}
-
+\obj~semble avoir son autonomie.
 \end{I}
 
 % 26
 \begin{I}
-
+Parfois, il est clair qu'un impact sur le cerveau (en \obj) change \sbj.
 \end{I}
 
 % 27
 \begin{I}
-
+Retour sur \ref{I11}. Le lien peut être présent ou absent. Lorsqu'il est présent, alors
+le moi profond est un repère absolument stable pour le moi de surface. Le lien peut
+être établi et rompu plusieurs fois au sein d'un individu au cours de sa vie.
 \end{I}
 
 % 28
 \begin{I}
-
+Définition du privé (\sbj): Ce qu'un seul, exactement, peut voir.\\
+Remarques:
+\begin{itemize}[label={},itemsep=0pt,topsep=0.7pt]
+\item un seul $\to$ humain, \sbj
+\item exactement $\to$ ni plus ni moins
+\item peut $\to$ modal, c'est une possibilité
+\item voir $\to$ synonyme de percevoir ici
+\end{itemize}
 \end{I}
 
 % 29
 \begin{I}
-
+Définition du public (\obj): Ce qu'au moins deux \sbj~peuvent voir.
 \end{I}
 
 % 30
 \begin{I}
-
+Précision sur le possible de \ref{I28}-\ref{I29}. Si un individu est au milieu d'un champs et voit une mouche voler puis mourir. Il y a une impossibilité physique pour un autre individu de pouvoir être présent au moment où la mouche est encore vivante. Mais voir la mouche vivante n'est pas pour autant uniquement \sbj.
 \end{I}
 
 % 31
 \begin{I}
-
+La perception par deux \sbj~d'un \obj~est importante.
 \end{I}
 
 % 32
 \begin{I}
-
+\percept~J'utilise ce symbole pour exprimer le fait que \sbj~perçoit \obj. 
+\percept est le symbole de la perception.
 \end{I}
 
 % 33
 \begin{I}
-
+\xen~J'utilise ce symbole pour rendre compte du fait que \obj~détermine \sbj. Dans un cadre moniste, \xen~résout le dualisme \sbj~\obj.
 \end{I}
 
 % 34
 \begin{I}
-
+Dire que \obj~détermine \sbj~est hâtif et mal défini. Cela contredit~\ref{I4} et~\ref{I22}.
 \end{I}
 
 % 35
 \begin{I}
-
+\xen~a pourtant bien du sens. A minima celui de représenter comment \sbj~peut être
+influencé par \obj~(c.f.~\ref{I26}). Mais \xen~représente aussi comment \sbj~apparaît dans \obj~au cours de la genèse de \sbj~dans un individu.
 \end{I}
 
 % 36
 \begin{I}
-
+Axiome métaphysique: Il existe du temps.
 \end{I}
 
 % 37
 \begin{I}
-
+\sbj~possède une mémoire. La mémoire déploie \sbj~dans le temps.
 \end{I}
 
 % 38
 \begin{I}
-
+\obj~existe dans le temps.
 \end{I}
 
 % 39
