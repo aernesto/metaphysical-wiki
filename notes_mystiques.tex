@@ -42,10 +42,10 @@
   \node[darkdot] at (0,-0.8) {};}
 }
 
-\newcommand{\sbj}{%
+\DeclareRobustCommand{\sbj}{%
   \tikz[baseline=-0.5ex,scale=.2]{
-  \draw[line width=0.8pt] (-0.8,0) arc (180:270:0.8);
-  \draw[line width=0.8pt] (0,-0.8) arc (270:360:0.8);
+    \draw[line width=0.8pt] (-0.8,0) arc (180:270:0.8);
+    \draw[line width=0.8pt] (0,-0.8) arc (270:360:0.8);
     \node[darkdot] at (0,-0.8) {};
   }%
 }
@@ -602,27 +602,57 @@ Axiome métaphysique: Il existe du temps.
 
 % 39
 \begin{I}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
 
+% Hand-drawn style
+\tikzset{
+  handdrawn/.style={
+    thick,
+    decorate,
+    decoration={random steps, segment length=3pt, amplitude=0.6pt}
+  },
+  dot/.style={circle, fill=black, inner sep=2pt}
+}
+
+% Oval (hand-drawn look)
+\draw[handdrawn] (0,0) ellipse (3 and 1.8);
+
+% Text above oval
+\node at (0,2.4) {une mer de \obj};
+
+% Six roughly uniform points
+\node[dot] at (-1.5,0.6) {};
+\node[dot] at (-0.8,-0.7) {};
+\node[dot] at (0.5,0.9) {};
+\node[dot] at (1.6,-0.4) {};
+\node[dot] at (0.2,-0.2) {};
+\node[dot] at (-2,0) {};
+
+\end{tikzpicture}
+\caption{des points de fuite, des points ``à l'infini'', des singularités, pour chaque \sbj~dans cette mer.}
+\end{figure}
 \end{I}
 
 % 40
 \begin{I}
-
+Suite à \ref{I33}-\ref{I35}: comment pur \obj~saurait-il engendrer du \sbj?
 \end{I}
 
 % 41
 \begin{I}
-
+Si \sbj~est le privé et si le privé est synonyme d'expérience, alors \ref{I4}$\equiv$\ref{I7}.
 \end{I}
 
 % 42
 \begin{I}
-
+\obj~a des régularités dans le temps perçues par la mémoire. 
 \end{I}
 
 % 43
 \begin{I}
-
+Éventuellement, \obj, l'objectif, le public, peut être défini axiomatiquement comme la propriété de se répéter, comme la propriété de régularité.
 \end{I}
 
 % 44
