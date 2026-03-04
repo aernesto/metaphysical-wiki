@@ -19,16 +19,21 @@
 \newcounter{Icounter}
 \renewcommand{\theIcounter}{I\arabic{Icounter}}
 
-\NewDocumentEnvironment{I}{}
+\NewDocumentEnvironment{I}{o}
 {
   \par\addvspace{2\baselineskip}
   \refstepcounter{Icounter}
   \label{\theIcounter}
   \noindent
-  \textbf{\theIcounter}\quad
+  % Formatting switch
+  \IfNoValueTF{#1}
+    {\textbf{\theIcounter}}           % default
+    {\textbf{\underline{\theIcounter}}} % if optional arg given
+  \quad
   \hangindent=2em
   \hangafter=1
 }
+{}
 {
   \par\addvspace{\baselineskip}
 }% ---------- Custom Symbols ----------
@@ -656,8 +661,8 @@ Si \sbj~est le privé et si le privé est synonyme d'expérience, alors \ref{I4}
 \end{I}
 
 % 44
-\begin{I}
-
+\begin{I}[u]
+Je demande au lecteur de s'imaginer deux semi-boucles en pointillé qui 
 \end{I}
 
 % 45
