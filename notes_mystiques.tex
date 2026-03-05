@@ -1,12 +1,14 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
+\usepackage{tipa}
 \usepackage{xparse}
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{amsmath,amssymb,mathrsfs}
 \usepackage{tikz}
+\usepackage{stix}
+\usepackage{graphicx}
 \usetikzlibrary{calc,arrows,bending,decorations.pathmorphing}
 
 \pagestyle{empty}
@@ -39,8 +41,20 @@
 }% ---------- Custom Symbols ----------
 \newcommand{\mata}{$\mathcal{M}ata$}
 \newcommand{\dieu}{$\bigcirc$}
+\newcommand{\schisme}{\reflectbox{\rotatebox{90}{$\nmid$}}}
+\newcommand{\bouclebas}{\textramshorns}
 
-% 1. Open cup with dark endpoints
+\DeclareRobustCommand{\reg}{%
+  \hspace{.2mm}\tikz[baseline=-0.5ex,scale=.3]{
+   \draw[line width=0.7pt] (-0.3,0) -- (-.3,.3);
+    \draw[line width=0.7pt] (-0.3,0) arc (180:270:0.3);
+    \draw[line width=0.7pt] (0,-0.3) arc (270:360:0.3);
+    \draw[line width=.7pt] (0.3,0) arc (180:90:0.3);
+    \draw[line width=.7pt] (.6,0.3) arc (90:0:0.3);
+    \draw[line width=0.7pt] (0.9,0) -- (.9,-.3);
+  }\hspace{0.2mm}%
+}
+
 \newcommand{\tautop}{%
 \tikz[scale=.162,baseline=0.13ex]{
 
@@ -163,8 +177,8 @@
 \section*{Standard Approximations}
 
 \[
-\cup \quad
-\cap \quad
+\acwcirclearrow \quad
+\acwgapcirclearrow \quad
 \circ \quad
 \infty \quad
 \vdash \quad
@@ -726,47 +740,61 @@ J'appelle \tautop~la topologie du monde ci-dessus, et $\circledcirc$ le monde lu
 
 % 45
 \begin{I}
-
+Dans \tautop~ j'appelle \bouclebas~le point spécial (le point qui apparaît dans \xen)
 \end{I}
 
 % 46
 \begin{I}
-
+Selon \tautop, \sbj~et \obj~sont des sous-parties de $\circledcirc$.\\
+Appelons \sbj~la branche subjective et \obj~la branche objective. 
 \end{I}
 
 % 47
 \begin{I}
-
+\bouclebas~est une source dans chaque direction.\begin{itemize}[topsep=0pt,itemsep=0pt,label={}]
+\item Dans l'une la réalité est perçue \sbj
+\item dans l'autre la réalité est perçue \obj
+\end{itemize}
 \end{I}
 
 % 48
 \begin{I}
-
+\tautop~est orienté (ou $\circledcirc$). Il y a la direction subjective et la direction objective.
+\begin{center}
+\begin{tikzpicture}[scale=.5pt]
+\draw[->, line width=1.1pt] (0,0) -- (0,.91);
+\draw[->, line width=1.1pt] (0,0) -- (0,-.91);
+\node[darkdot,minimum size=3pt] at (0,0) {};
+\end{tikzpicture}
+\end{center}
 \end{I}
 
 % 49
 \begin{I}
-
+Principe de raisonnement: Il existe la \underline{distinction}. \\ Par exemple, je distingue \sbj~de \obj
 \end{I}
 
 % 50
 \begin{I}
-
+Suite de \ref{I1}. En supposant que le temps distingue tout, on ne perçoit rien qui existe encore. Soit $X_t$ une chose à l'instant $t$. Dès que $X_t$ est perçue, $X_t$ n'existe plus; on est passé à $X_{t+\Delta t}$.
 \end{I}
 
 % 51
 \begin{I}
-
+Le principe de mémoire (\ref{I37}) et celui de régularité (\ref{I42}) sont peut-être la même chose.
 \end{I}
 
 % 52
 \begin{I}
-
+Reprenant ce qui a été dit sur le temps et la mémoire:
+\begin{center}
+temps\hspace{1cm}$\Big|$\hspace{1cm}mémoire
+\end{center}
 \end{I}
 
 % 53
 \begin{I}
-
+J'écris \schisme~pour le principe de distinction. Et j'écris \reg~pour le principe de régularité.
 \end{I}
 
 % 54
