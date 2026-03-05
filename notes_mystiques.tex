@@ -39,7 +39,25 @@
 }% ---------- Custom Symbols ----------
 \newcommand{\mata}{$\mathcal{M}ata$}
 \newcommand{\dieu}{$\bigcirc$}
+
 % 1. Open cup with dark endpoints
+\newcommand{\tautop}{%
+\tikz[scale=.162,baseline=0.13ex]{
+
+% vertical stem
+\draw[line width=.75pt] (0,0) -- (0,2);
+
+
+% single smooth wave (one period-like bump)
+\draw[line width=.75pt]
+  (-1,2)
+  .. controls (-0.5,2.4) and (0.5,1.6) ..
+  (1,2);
+
+% small circle on the vertical bar
+\draw[line width=.5pt] (0,1) circle (0.37);
+
+}}
 \newcommand{\percept}{%
 \tikz[baseline=-0.5ex,scale=.2]{
   \draw[line width=0.8pt] (0,0) circle (0.8);
@@ -662,7 +680,48 @@ Si \sbj~est le privé et si le privé est synonyme d'expérience, alors \ref{I4}
 
 % 44
 \begin{I}[u]
-Je demande au lecteur de s'imaginer deux semi-boucles en pointillé qui 
+\begin{center}
+\begin{tikzpicture}[baseline=-0.5ex,scale=.5]
+
+  % central four arcs
+  \draw[line width=.8pt] (-0.8,-0.8) arc (180:90:0.8);
+  \draw[line width=.8pt] (0,0) arc (90:0:0.8);
+  \draw[line width=.8pt] (-0.8,0.8) arc (180:270:0.8);
+  \draw[line width=.8pt] (0,0) arc (270:360:0.8);
+
+  \node[darkdot] at (0,0) {};
+
+  % dashed semi-oval on the right
+  \draw[dashed, line width=.8pt]
+    (0.8,0.8) arc[start angle=180, end angle=0, x radius=.35, y radius=0.25];
+  \draw[dashed, line width=.8pt] (1.5, .8) -- (1.5, -.8);
+    \draw[dashed, line width=.8pt]
+    (0.8,-0.8) arc[start angle=180, end angle=360, x radius=.35, y radius=0.25];
+
+\draw[dashed, line width=.8pt]
+    (-0.8,0.8) arc[start angle=0, end angle=180, x radius=.35, y radius=0.25];
+\draw[dashed, line width=.8pt] (-1.5, .8) -- (-1.5, -.8);
+\draw[dashed, line width=.8pt]
+    (-0.8,-0.8) arc[start angle=360, end angle=180, x radius=.35, y radius=0.25];
+\end{tikzpicture}\end{center}
+Ces pointillés représentent \percept~qui se réalise dans une autre dimension (3D).\\
+\begin{center}\begin{tikzpicture}[baseline=-0.5ex,scale=.5]{
+  \draw[line width=0.8pt] (0,0) circle (0.8);
+  \node[darkdot] at (-0.8,0) {};
+  \node[darkdot] at (0.8,0) {};}
+\end{tikzpicture}\end{center}
+J'identifie ces deux points et j'obtiens la topologie du monde dans laquelle ont cours à la fois \percept~et \xen.\\
+\noindent Pour garder l'orientation initiale dans mes écrits, 
+\begin{center}
+\begin{tikzpicture}[baseline=-0.5ex,scale=.5]{
+  \draw[line width=0.8pt] (0,0) circle (0.8);
+  \node[darkdot] at (0,0.8) {};
+  \node[darkdot] at (0,-0.8) {};}
+\end{tikzpicture}
+\end{center}
+mais symbole ci-dessus à ne pas confondre avec la perception, même s'il est identique.
+
+J'appelle \tautop~la topologie du monde ci-dessus, et $\circledcirc$ le monde lui-même, l'espace.
 \end{I}
 
 % 45
