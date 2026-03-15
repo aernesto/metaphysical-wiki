@@ -76,10 +76,11 @@
 
 % ---------- Custom Symbols ----------
 \newcommand{\mata}{$\mathcal{M}ata$}
+\newcommand{\xp}{$\chi$}
 \newcommand{\dieu}{$\bigcirc$}
 \newcommand{\schisme}{\reflectbox{\rotatebox{90}{$\nmid$}}}
 \newcommand{\bouclebas}{\textramshorns}
-
+\newcommand{\verite}{$\vDash$}
 \DeclareRobustCommand{\reg}{%
   \hspace{.2mm}\tikz[baseline=-0.5ex,scale=.3]{
    \draw[line width=0.7pt] (-0.3,0) -- (-.3,.3);
@@ -90,6 +91,16 @@
     \draw[line width=0.7pt] (0.9,0) -- (.9,-.3);
   }\hspace{0.2mm}%
 }
+
+
+\newcommand{\B}{
+\tikz[scale=.2,baseline=-0.5ex]{
+  \draw[symstroke] (0,0.5) circle (0.5);
+  \draw[symstroke] (0,-0.5) circle (0.5);
+    \node[darkdot] at (0,0) {};;
+}
+}
+
 
 \newcommand{\tautop}{%
 \tikz[scale=.162,baseline=0.13ex]{
@@ -119,7 +130,6 @@
   }%
 }
 
-% 2. Inverted cup
 \newcommand{\obj}{%
   \tikz[baseline=-0.5ex,scale=.2]{
     \draw[line width=.8pt] (-0.8,0) arc (180:90:0.8);
@@ -137,7 +147,6 @@
   }%
 }
 
-% 3. Circle with pressure point
 \newcommand{\symcircle}{
 \begin{tikzpicture}[baseline=-0.5ex]
   \draw[line width=0.8pt] (0,0) circle (0.8);
@@ -145,7 +154,6 @@
 \end{tikzpicture}
 }
 
-% 4. Infinity with dark crossing
 \newcommand{\syminf}{
 \begin{tikzpicture}[baseline=-0.5ex]
   \draw[symstroke]
@@ -155,16 +163,7 @@
 \end{tikzpicture}
 }
 
-% 5. Vertical double loop
-\newcommand{\symdoubleloop}{
-\begin{tikzpicture}[baseline=-0.5ex]
-  \draw[symstroke] (0,0.5) circle (0.5);
-  \draw[symstroke] (0,-0.5) circle (0.5);
-  \fill (0,0) circle (1.4pt);
-\end{tikzpicture}
-}
 
-% 6. Circle with vertical stroke
 \newcommand{\symcircvert}{
 \begin{tikzpicture}[baseline=-0.5ex]
   \draw[symstroke] (0,0) circle (0.8);
@@ -173,7 +172,6 @@
 \end{tikzpicture}
 }
 
-% 7. Hook-through circle
 \newcommand{\symhookcirc}{
 \begin{tikzpicture}[baseline=-0.5ex]
   \draw[symstroke] (0,0) circle (0.8);
@@ -182,7 +180,6 @@
 \end{tikzpicture}
 }
 
-% 8. Double small circles
 \newcommand{\symdoublecirc}{
 \begin{tikzpicture}[baseline=-0.5ex]
   \draw[symstroke] (-0.5,0) circle (0.4);
@@ -192,7 +189,6 @@
 \end{tikzpicture}
 }
 
-% 9. Curved cross
 \newcommand{\symcurvecross}{
 \begin{tikzpicture}[baseline=-0.5ex]
   \draw[symstroke]
@@ -211,14 +207,15 @@
 \begin{document}
 
 \maketitle
-\thispagestyle{fancy} % <--- Add this line here
-% Optional: Add an abstract for OSF readers
+\thispagestyle{fancy} 
+
 \begin{abstract}
 \noindent Ce document contient mes réflexions \emph{en développement} chronologique sur le monde. J'essaye de coucher sur le papier, et de développer en ce faisant, ma compréhension du monde, et par là-même de moi-même, des autres et de tout ce qui m'entoure. Ce document m'est déjà utile, pour développer et ``m'y retrouver'' dans ma pensée. Il te sera peut-être utile à toi, Ô lecteur \smiley.
 \end{abstract}
 
 \vspace{2em}
 
+% Les numéros rouges correspondent à la numérotation originale dans le cahier manuscrit
 % 1
 \begin{I}
 $A$ perçoit $A$ implique une infinité d'évènements car:
@@ -805,6 +802,312 @@ temps\hspace{1cm}$\Big|$\hspace{1cm}mémoire
 J'écris \schisme~pour le principe de distinction. Et j'écris \reg~pour le principe de régularité.
 \end{I}
 
+%54
+\begin{I}
+Par abus de langage je dis \tautop~pour dire $\left(\circledcirc,\tautop\right)$
+\end{I}
 
+%55
+\begin{I}
+Rappel des axiomes:\begin{itemize}[label={},itemsep=0pt,topsep=0.7pt, leftmargin=5em]
+\item \ref{I4} $\exists$\sbj
+\item \ref{I6} $\exists$ \xp (l'expérience)
+\item \ref{I7} $\exists$\obj
+\item \ref{I48}/\ref{I35} $\exists$\schisme
+\item \ref{I41} \reg
+\end{itemize}
+\end{I}
+
+%56
+\begin{I}
+Je me demande si \bouclebas~est Atmān
+\end{I}
+
+%57
+\begin{I}
+Avec \tautop~je cherche à expliquer le lien entre tous les axiomes de \ref{I54}, et surtout le lien entre \sbj~et \obj, 
+qui inclut \percept~et \xen.
+\end{I}
+
+%58
+\begin{I}
+Dans la genèse de \sbj~dans la mer de \obj, une opération \schisme~a cours, la création d'une singularité, une distinction fondamentale de réalité. \xen~relève de \schisme
+\end{I}
+
+%59
+\begin{I}
+La perception \percept~est clairement un mouvement d'union des distincts. \newline
+En \ref{I8} j'ai déjà évoqué que, peut-être, \xp$\equiv\percept$\newline
+Je suis en train de me demander si \percept~est un principe en soi, faisant pendant de \schisme, ou
+bien si \reg~est à l'origine de \percept
+\end{I}
+
+%60
+\begin{I}
+Peut-être que \bouclebas~a la double propriété de \schisme~et d'union.
+\end{I}
+
+%61
+\begin{I}
+Par \reg~j'entends les ondes, les vagues, les cycles, tout ce qui se répète. \reg~est la stabilité de par le temps \schisme.\newline
+La mémoire est liée à \reg.
+\end{I}
+
+%62
+\begin{I}
+Idée d'un principe de conservation de la réalité. Toute distinction \schisme~doit être compensée par un \reg.
+\end{I}
+
+%63
+\begin{I}
+As human beings, cognitive systems, we are often hooked up to the external world, fully attentive to \obj, and self-reflection, \sbj, seems to fade away in these instances.
+\end{I}
+
+%64
+\begin{I}
+Toute ma réflexion vient de l'apparente contradiction entre la dualité \sbj~/~\obj~et les liens $\{\percept,\xen\}$
+\end{I}
+
+%65
+\begin{I}
+We can give a \sbj~account of \obj\newline
+But we cannot give a \obj~account of \sbj.
+\end{I}
+
+%66
+\begin{I}
+\ref{I4}\&\ref{I7} are both undeniable
+\end{I}
+
+%67
+\begin{I}
+I wish to conceptualize knowledge.
+\end{I}
+
+%68
+\begin{I}
+Je demande au lecteur de la clémence et de l'intransigeance envers mes écrits. De la clémence car mon esprit est
+limité et je fais ce que je peux, avec mes outils. De l'intransigeance car c'est ainsi que nous découvrons \obj, par la
+critique et le regard de l'autre. 
+\end{I}
+
+%69
+\begin{I}
+Il y a 2 points de vue, \sbj~et \obj, et seul l'un d'eux, \sbj, est authentique, premier, sans filtre. \obj ne se perçoit qu'à travers \sbj~(\ref{I22}). C'est ce que Merleau-Ponty dit dans \emph{Phénoménologie de la perception}.
+\end{I}
+
+%70
+\begin{I}
+Principe de raisonnement: $\exists$ un principe de vérité, l'affirmation, ce que l'on sait et affirme sans le moindre doute, sans la possibilité de douter. 
+\end{I}
+
+%71
+\begin{I}
+\xp~est un principe de vérité. Tout ce qui est vécu, tout ce dont on fait l'expérience, est vrai, est affirmable, et par là-même connaissable (sachable).
+\end{I}
+
+%72
+\begin{I}
+J'utilise \verite~pour le principe de vérité (ou de connaissance).
+\end{I}
+
+%73
+\begin{I}
+\verite\sbj \qquad \verite\xp
+\end{I}
+
+%74
+\begin{I}
+Grâce à \reg, \obj~est connaissable.
+\end{I}
+
+%75
+\begin{I}
+La connaissance, pour le moment, se réalise en \sbj.
+\end{I}
+
+%76
+\begin{I}
+La connaissance est une image de \obj~en \sbj.
+\end{I}
+
+%77
+\begin{I}
+La connaissance est distinct de l'objet de la connaissance. La distinction suit celle qui a engendré \sbj.
+
+\begin{center}
+\hspace{0cm}\raisebox{0.5ex}{\sbj}\hspace{4cm}\obj\\
+\hspace{.4cm}\schisme\\ \vspace{-.4cm}
+\hspace{.4cm}connaissance \hspace{2.8cm} objet connu
+\end{center}
+\end{I}
+
+%78
+\begin{I}
+Suivant \ref{I75}-\ref{I76}, pour connaître \sbj, il faut que \sbj~contienne une image de ``\sbj~dans \obj'';
+autrement dit il faut que \sbj~contienne une image de \xen.
+\end{I}
+
+%79
+\begin{I}
+Une image de \obj~en \sbj~(donc une connaissance) se crée dans un mouvement de \reg.
+\end{I}
+
+%80
+\begin{I}
+Retour sur \ref{I58}, je me demande toujours si $\percept\equiv\reg$\\
+J'hésite à affirmer cette équivalence parce que j'ai dit en \ref{I24} que \obj~semblait avoir sa propre autonomie.
+Cela m'amène ainsi à penser que les régularités dans le monde $(\reg)$ sont indépendantes des subjectivités $(\sbj)$.\\
+Mais, je sais que la mémoire ne saurait exister sans \reg~et \percept~sans mémoire n'a aucun sens... En fait, il est
+bien possible que \sbj~sans mémoire n'a aucun sens (souvenons-nous de \ref{I36}).
+\end{I}
+
+%81
+\begin{I}
+En suite de \ref{I36}-\ref{I37}, \schisme~et \reg~sont indissociables et complémentaires. Le temps \schisme~distingue les instants consécutifs, \reg~les unit. Est-ce que \schisme~et \reg~sont donc eux aussi deux facettes d'un même phénomène?
+De la même manière que \sbj~et \obj~dans \tautop?\\
+Mais \reg~semble global, sur l'éternité, alors que \schisme~semble local.
+\end{I}
+
+%82
+\begin{I}
+\tautop~est une perspective moniste. Une alternative dualiste serait
+\begin{center}
+\begin{tikzpicture}[scale=.5,baseline=-0.5ex]
+  \draw[symstroke] (0,0.5) circle (0.5);
+  \draw[symstroke] (0,-0.5) circle (0.5);
+    \node[darkdot] at (0,0) {};;
+\end{tikzpicture}
+\end{center}
+Intuitivement, cette alternative ne rend compte que de \xen, pas de \percept, sauf à identifier \xen~et\percept, ce qui n'est pas exclu.
+\end{I}
+
+%83
+\begin{I}
+Je reviens sur mon identification du temps à la distinction. \ref{I48}$\neq$\ref{I35}.\\
+Je tente ici de définir le temps comme $(\schisme,\reg)$, c'est-à-dire distinction et régularité au-delà, en complément, 
+en négatif de la distinction. 
+
+\vspace{.31cm}
+\begin{tikzpicture}[scale=.4]
+  \draw[symstroke] (0,0.5) circle (0.5);
+  \draw (-0.3, -0.2) -- (0, .3);
+\end{tikzpicture}
+\end{I}
+
+%84
+\begin{I}
+Suite à \ref{I72}. Il faut \mata~(\ref{I9}) pour affirmer l'existence de \sbj. Or, d'après \ref{I26}, 
+tout le monde ne fait pas (souvent) l'expérience de \mata. C'est pourquoi il est compréhensible que certains êtres
+humains refusent \verite\sbj
+\end{I}
+
+%85
+\begin{I}
+Reformulation de la contradiction \ref{I63}. Il est contradictoire, ou pour le moins paradoxal, que \sbj~semble à la fois lié
+à \obj~et disjoint de \obj.\\
+\sbj~est lié à \obj~comme évoqué précédemment, via \xp~et \tautop. ET \sbj~est disjoint de \obj~comme évoqué en \ref{I57} et \ref{I18} et \ref{I21}; \sbj~et \obj~semblent être deux sources distinctes et absolues de réalité.
+\end{I}
+
+%86
+\begin{I}
+Devant \ref{I84}, dois-je accepter la contradiction?
+\end{I}
+
+%87
+\begin{I}
+Réponse à \ref{I85}: Je ne vis pas la contradiction \ref{I84} car \xp~est dans \sbj.\\
+Remarquons que jusqu'à présent j'ai juste affirmé \verite\sbj~(\ref{I72}). Je n'ai pas affirmé \verite\obj.
+\end{I}
+
+%88
+\begin{I}
+Suite à \ref{I86}, j'en viens à penser que $\exists$ et \verite~sont deux choses différentes. \verite~est 
+le principe de vérité (ou de connaissance). Peut-être que $\exists$ n'est que l'étape de construction d'un modèle.
+\end{I}
+
+%89
+\begin{I}
+Suite de \ref{I86}: donc il n'y a pas de contradiction dans \xp, juste un mystère, une curiosité (de \sbj?).
+\end{I}
+
+%90
+\begin{I}
+Reformulation de \ref{I74}: La connaissance réside en \sbj. Souvenons-nous de \ref{I64} et \ref{I68}... je suis 
+sur le point de tomber dans un \underline{solipsisme}.
+\end{I}
+
+%91
+\begin{I}[u]
+En admettant \verite\obj, on peut peut-être éviter la contradiction grâce au temps.
+La subjectivité \sbj~ne peux, je suppose, dans le même temps faire l'expérience de soi (\sbj~ou \mata)
+et du monde objectif \obj~(via \xp/\percept). L'erreur de raisonnement produisant la contradiction apparente 
+vient peut-être de notre défaut de temporalisation de \sbj~et \obj.\\
+Autrement dit, peut-être que notre condition est un va-et-vient constant de \sbj~et de \obj.
+\begin{center}
+\begin{tikzpicture}[scale=.4]
+
+\pgfmathsetmacro{\a}{1.4}
+\pgfmathsetmacro{\p}{pi}
+
+\draw[line width=0.8pt, smooth, domain=0:{6*\p}, samples=200]
+  plot (\x,{\a*sin(\x r)});
+
+\node[darkdot] at ({\p/2},{\a}) {};
+\node[darkdot] at ({3*\p/2},{-\a}) {};
+\node[darkdot] at ({5*\p/2},{\a}) {};
+\node[darkdot] at ({7*\p/2},{-\a}) {};
+\node[darkdot] at ({9*\p/2},{\a}) {};
+\node[darkdot] at ({11*\p/2},{-\a}) {};
+
+\end{tikzpicture}
+\end{center}
+\end{I}
+
+%92
+\begin{I}
+Ma méthode de travail ici avec numérotation méthodique de mes idées, semble très fructueuse.
+\end{I}
+
+%93
+\begin{I}
+Écrire, c'est laisser une trace dans \obj
+\end{I}
+
+%94
+\begin{I}
+\begin{center}
+\begin{tikzpicture}[scale=.4]
+
+\pgfmathsetmacro{\a}{1.4}
+\pgfmathsetmacro{\p}{pi}
+
+% horizontal axis
+\draw[line width=0.6pt] (0,0) -- ({8*\p},0);
+
+% main sine wave
+\draw[line width=0.8pt, smooth, domain=0:{4*\p}, samples=200]
+  plot (\x,{\a*sin(\x r)});
+
+% mirrored sine (only where original is positive)
+\draw[dashed, line width=0.8pt, smooth, domain=0:{\p}, samples=100]
+  plot (\x,{-\a*sin(\x r)});
+
+\draw[dashed, line width=0.8pt, smooth, domain={2*\p}:{3*\p}, samples=100]
+  plot (\x,{-\a*sin(\x r)});
+
+% extrema dots
+\node[darkdot] at ({\p/2},{\a}) {};
+\node[darkdot] at ({3*\p/2},{-\a}) {};
+\node[darkdot] at ({5*\p/2},{\a}) {};
+\node[darkdot] at ({7*\p/2},{-\a}) {};
+
+\node at (6*\p,1.2) {Le monde objectif};
+\node at (6*\p,-1.2) {Le monde subjectif};
+
+
+\end{tikzpicture}
+\end{center}
+\end{I}
 
 \end{document}
