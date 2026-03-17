@@ -1,11 +1,6 @@
 site_name: Metaphysical Wiki
 repo_url: https://github.com/aernesto/metaphysical-wiki
 
-theme:
-  name: material
-  features:
-    - navigation.tabs # Optional: creates horizontal tabs for top-level directories
-
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
@@ -17,3 +12,45 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: >
+  This work is licensed under a 
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+  Creative Commons Attribution 4.0 International License</a>.
+  <br>
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" 
+  src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+
+
+site_url: https://aernesto.github.io/metaphysical-wiki/
+edit_uri: edit/main/docs/
+
+theme:
+  custom_dir: overrides
+  name: material
+  palette:
+    # Deep, scholarly dark/light mode toggle
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: slate
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.top           # "Back to top" button for long entries
+    - navigation.tracking      # Highlights sidebar based on scroll position
+    - navigation.sections      # Groups alphabetical headers in the sidebar
+    - search.suggest           # Instant title matching as you type
+    - search.highlight         # Highlights keywords in the text
+    - search.share             # Lets you share deep-links to search results
+    - content.code.copy        # Adds a copy button to code blocks (like LaTeX)
+
