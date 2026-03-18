@@ -9,6 +9,7 @@
 \usepackage{titlesec} % For cleaner section titles
 
 % ---------- Core Packages ----------
+\usepackage{booktabs}
 \usepackage{tipa}
 \usepackage{xparse}
 \usepackage{enumitem}
@@ -95,7 +96,7 @@
 
 
 \newcommand{\B}{
-\tikz[scale=.2,baseline=-0.5ex]{
+\tikz[scale=.22,baseline=-0.5ex]{
   \draw[symstroke] (0,0.5) circle (0.5);
   \draw[symstroke] (0,-0.5) circle (0.5);
     \node[darkdot] at (0,0) {};;
@@ -227,6 +228,26 @@ de ma pensée, c'est quelque chose qui m'est extrêmement personnel, et ce texte
 N'attends donc pas, Ô lecteur, de ces notes, une pensée structurée, bien ficelée, claire et limpide, nettement argumentée. Vois-y plutôt une pensée en formation, un intellect qui avance à grande peine sur le chemin de la connaissance.
 
 Un dictionnaire compagnon de ces notes existe \href{https://aernesto.github.io/metaphysical-wiki/}{ici}.
+\section*{Tableau synthétique des symboles}
+\begin{table}[h]
+\centering
+\begin{tabular}{rl}
+\toprule
+\textbf{Symbole} & \textbf{Mot} \\
+\midrule
+\sbj      & Subjectivité \\
+\obj      & Objectivité \\
+\schisme  & Schisme \\
+\tautop   & Topologie $\tau$ du monde \\
+\B        & Topologie $\mathcal{B}$ du monde \\
+\xen      & Détermination du subjectif par l'objectif \\
+\percept  & Perception \\
+\verite   & Principe de vérité \\
+\xp & Expérience\\
+\reg & Régularité\\
+\bottomrule
+\end{tabular}
+\end{table}
 \section*{Le texte}
 
 % Les numéros rouges correspondent à la numérotation originale dans le cahier manuscrit
@@ -1122,6 +1143,122 @@ Ma méthode de travail ici avec numérotation méthodique de mes idées, semble 
 
 \end{tikzpicture}
 \end{center}
+\end{I}
+
+
+%95
+\begin{I}
+En pointillé ci-dessus (\ref{I93}), j'ai tracé un second \sbj~qui est présent dans chaque temps. Sur les temps de \obj, l'arc en pointillé représente la perception \percept\\
+Sur les temps \sbj, les pointillés sont redondant.
+\end{I}
+
+%96
+\begin{I}
+Une alternative au modèle \ref{I90} qui résout la contradiction \ref{I84} est d'étendre \sbj~et \obj~dans l'espace, de sorte qu'ils aient des points de contact et des points disjoints.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+
+% parameter controlling narrowness
+\def\a{0.30}
+
+% Right curve: x = y^2 / a
+\draw[thick, domain=-1.2:1.2, smooth, samples=100]
+  plot ({(\x*\x)/\a}, {\x});
+
+% Left curve: mirror of the right one
+\draw[thick, domain=-1.2:1.2, smooth, samples=100]
+  plot ({-(\x*\x)/\a}, {\x});
+
+% Contact point
+\fill (0,0) circle (1.5pt);
+
+% Arrow and label
+\draw[->, thick] (-0.8,0) -- (-0.09,0);
+\node at (-2,0) {point de contact};
+
+\node at (0, 1.1) {monde \sbj};
+\node at (0, -1.1) {monde \obj};
+\end{tikzpicture}
+\end{center}
+Ceci est peut-être équivalent à \B.
+
+Ici le point de contact explique \xen~et \percept~tandis que tous les autres points expliquent la partie ``disjoints'' du paradoxe.
+\end{I}
+
+%97
+\begin{I}
+Retour sur \ref{I81}: J'appelle topologie de \B~$\mathcal{B}$.
+\end{I}
+
+%98
+\begin{I}
+On peut poser \xen~comme un axiome de genèse. Par exemple ``J'objectif génère le subjectif'', ou vice-versa.
+\end{I}
+
+%99
+\begin{I}
+Le solipsisme fait violence à \obj~en niant sa part d'absolu.
+\end{I}
+
+%100
+\begin{I}
+Continuation de \ref{I98}. Quand un individu $\alpha$ dit à un individu $\beta$ qu'il est solipsiste, il fait 
+violence à $\beta$ en niant son existence.
+\end{I}
+
+%101
+\begin{I}
+Ce que je fais depuis le début de ce cahier: chercher une description intuitive, synthétique et logique du monde, qui rende compte de tout le savoir humain.
+\end{I}
+
+%102
+\begin{I}
+Dieu est une explication facile à la quête \ref{I100}.
+\end{I}
+
+%103
+\begin{I}
+Complément sur \ref{I100}: notamment, je cherche une vision du monde qui résolve \ref{I84}.\\
+Une vision du monde qui rende compte de façon unifiée de la subjectivité et de l'objectivité.
+\end{I}
+
+%104
+\begin{I}
+Deux êtres humains qui perçoivent la même partie de \obj.
+\begin{center}
+\begin{tikzpicture}
+ \draw[line width=0.8pt] (0,0) circle (0.8);
+  \node[darkdot] at (0,0.8) {};
+  \node[darkdot] at (0,-0.8) {};
+  \draw[line width=0.8pt] (5,0) circle (0.8);
+  \draw[line width=0.6pt] (-2,0) -- (7,0);
+    \draw[line width=0.6pt] (.71,.4) -- (4.29,.4);
+  \node[darkdot] at (5,0.8) {};
+  \node[darkdot] at (5,-0.8) {};
+\end{tikzpicture}
+\end{center}
+Tentative de ne dessiner qu'un \obj
+\end{I}
+
+%102
+\begin{I}
+\end{I}
+
+%102
+\begin{I}
+\end{I}
+
+%102
+\begin{I}
+\end{I}
+
+%102
+\begin{I}
+\end{I}
+
+%102
+\begin{I}
 \end{I}
 
 \end{document}
