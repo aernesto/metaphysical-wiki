@@ -1238,23 +1238,132 @@ Deux êtres humains qui perçoivent la même partie de \obj.
   \node[darkdot] at (5,-0.8) {};
 \end{tikzpicture}
 \end{center}
-Tentative de ne dessiner qu'un \obj
+\noindent Tentative de ne dessiner qu'un \obj
+
+\begin{center}
+\begin{tikzpicture}[scale=2]
+
+% rayon
+\def\r{1}
+
+% demi-cercle (haut)
+\draw[line width=0.8pt]
+  (-\r,0) arc[start angle=180, end angle=0, radius=\r];
+
+% courbe de Bézier (presque miroir, mais asymétrique)
+\draw[line width=0.8pt]
+  (-\r,0)
+  .. controls (-0.3,-0.9) and (0.8,-1.1) ..
+  (\r,0);
+  
+ \draw[line width=0.8pt]
+(\r,0)
+.. controls (0.3,-0.9) and (-0.8,-1.1) ..
+(-\r,0);
+
+  \node[darkdot] at (0,\r) {};
+  \node[darkdot] at (0.6,-.66) {};
+   \node[darkdot] at (-0.6, -.66) {};
+
+\end{tikzpicture}
+\end{center}
+\noindent Dessin plus simple abandonnant mes symboles.\vspace{.3cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+% Styles
+\tikzset{
+  obj/.style={draw, line width=0.8pt},
+  arrow/.style={->, line width=0.8pt}
+}
+
+% Noeuds principaux
+\node[obj, circle, minimum size=1.5cm] (C1) at (0,0) {};
+\node[obj, rectangle, minimum width=2.2cm, minimum height=1.2cm] (R) at (4,0) {};
+\node[obj, circle, minimum size=1.5cm] (C2) at (8,0) {};
+
+% Labels en dessous
+\node at (0,-2) (S1) {subjectivité 1};
+\node[align=center] at (4,-2) (M) {monde\\ objectif};
+\node at (8,-2) (S2) {subjectivité 2};
+
+% Flèches des labels vers objets
+\draw[arrow] (S1) -- (C1);
+\draw[arrow] (M) -- (R);
+\draw[arrow] (S2) -- (C2);
+
+% Traits entre objets (bord à bord)
+\draw[line width=0.8pt] (C1.east) -- (R.west);
+\draw[line width=0.8pt] (R.east) -- (C2.west);
+
+% Labels "perception"
+\node at (2,0.4) {perception};
+\node at (6,0.4) {perception};
+
+\end{tikzpicture}
+\end{center}
 \end{I}
 
-%102
+%105
 \begin{I}
+Schéma pour le tryptique \ref{I18}
+\begin{center}
+\begin{tikzpicture}[baseline=-0.5ex, scale=.72]
+
+% hampe verticale
+\draw[line width=1pt] (0,-.84) -- (0,.84);
+
+% empattement haut (arc très large, quasi horizontal)
+\draw[line width=1pt]
+  (-1.5,1)
+  %.. controls (-0.5,2.2) and (0.5,2.2) ..
+   .. controls (-0.5,.8) and (0.5,.8) ..
+  (1.5,1);
+
+% empattement bas (symétrique)
+\draw[line width=1pt]
+  (-1.5,-1)
+ % .. controls (-0.5,-2.2) and (0.5,-2.2) ..
+    .. controls (-0.5,-.8) and (0.5,-.8) ..
+  (1.5,-1);
+
+\end{tikzpicture}
+\end{center}
 \end{I}
 
-%102
+%106
 \begin{I}
+\obj nous est révélé grâce à \reg~dans \percept
 \end{I}
 
-%102
+%107
 \begin{I}
+Nous naissons dans \reg.
 \end{I}
 
-%102
+%108
 \begin{I}
+Mes découvertes jusqu'à présent:\newline
+\begin{center}
+\tautop \quad \ref{I43}\\
+\begin{tikzpicture}[scale=.04]
+
+\pgfmathsetmacro{\a}{1.4}
+\pgfmathsetmacro{\p}{pi}
+
+\draw[line width=0.8pt, smooth, domain=0:{6*\p}, samples=200]
+  plot (\x,{\a*sin(\x r)});
+
+\node[darkdot] at ({\p/2},{\a}) {};
+\node[darkdot] at ({3*\p/2},{-\a}) {};
+\node[darkdot] at ({5*\p/2},{\a}) {};
+\node[darkdot] at ({7*\p/2},{-\a}) {};
+\node[darkdot] at ({9*\p/2},{\a}) {};
+\node[darkdot] at ({11*\p/2},{-\a}) {};
+
+\end{tikzpicture}\quad \ref{I90}
+\end{center}
 \end{I}
 
 %102
