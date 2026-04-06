@@ -245,9 +245,11 @@ Un dictionnaire compagnon de ces notes existe \href{https://aernesto.github.io/m
 \verite   & Principe de vérité \\
 \xp & Expérience\\
 \reg & Régularité\\
+\dieu & Dieu\\
 \bottomrule
 \end{tabular}
 \end{table}
+\newpage
 \section*{Le texte}
 
 % Les numéros rouges correspondent à la numérotation originale dans le cahier manuscrit
@@ -470,10 +472,9 @@ Il existe du public, equivalently, de l'objectif. Le privé perçoit le public.
 
 % 9
 \begin{I}
-A priori, percevoir est équivalent à ``faire l'expérience de''.
+A priori, percevoir est équivalent à ``faire l'expérience de''.\vspace{.3cm}
 
-
-\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+\begin{tikzpicture}[x=.8cm,y=.8cm]
 
   % Styles
   \tikzset{
@@ -1469,16 +1470,230 @@ Je commence à perdre le fil, la mémoire, de mes écrits jusqu'ici.
 %115
 \begin{I}
 Représentation 2D de \tautop:
+
+\begin{center}
+\begin{tikzpicture}[
+    font=\small,
+    every node/.style={align=center}
+]
+
+% Paramètres de taille
+\def\colwidth{2.5}   % largeur d'une colonne
+\def\colheight{7.5}  % hauteur ~ 3x largeur
+\def\gap{1.2}        % espace entre colonnes
+
+% Positions des colonnes
+\coordinate (L) at (0,0);
+\coordinate (M) at ($(L)+(\colwidth+\gap,0)$);
+\coordinate (R) at ($(M)+(\colwidth+\gap,0)$);
+
+% =========================
+% COLONNE GAUCHE
+% =========================
+
+% Mini-colonnes internes (serrées)
+\coordinate (L1) at ($(L)+(0.3,0)$);
+\coordinate (L2) at ($(L)+(1.2,0)$);
+\coordinate (L3) at ($(L)+(2.1,0)$);
+
+% Texte vertical (2 "lignes" via \\)
+\node[rotate=90, anchor=center] at ($(L1)+(0,\colheight/2)$)
+{direction de\\l'objectif};
+
+% Flèche vers le haut
+\draw[->, thick] 
+    ($(L2)+(0,1.8)$) -- ($(L2)+(0,\colheight-1.8)$);
+
+% Texte droite
+\node[rotate=90] at ($(L3)+(0,\colheight/2)$) {connaissance};
+
+% =========================
+% COLONNE MILIEU
+% =========================
+
+% Centre colonne
+\coordinate (MC) at ($(M)+(\colwidth/2,\colheight/2)$);
+
+% Oval
+\draw[thick] ($(MC)+(0,0)$) ellipse (0.9 and 2.2);
+
+% Texte haut / bas
+\node at ($(MC)+(0,2.8)$) {objectif};
+\node at ($(MC)+(0,-2.8)$) {subjectif};
+
+  \node[darkdot] (Z) at (4.956,1.54) {};
+    \node[darkdot] (Y) at (4.956,5.94) {};
+
+% =========================
+% COLONNE DROITE
+% =========================
+
+% Mini-colonnes internes
+\coordinate (R1) at ($(R)+(0.3,0)$);
+\coordinate (R2) at ($(R)+(1.2,0)$);
+\coordinate (R3) at ($(R)+(2.1,0)$);
+
+% Texte vertical (sens horaire)
+\node[rotate=-90, anchor=center] at ($(R1)+(0,\colheight/2)$)
+{perception};
+
+% Flèche vers le bas
+\draw[->, thick] 
+    ($(R2)+(0,\colheight-1.8)$) -- ($(R2)+(0,1.8)$);
+
+% Texte vertical en deux lignes
+\node[rotate=-90, anchor=center] at ($(R3)+(0,\colheight/2)$)
+{direction\\du subjectif};
+
+\end{tikzpicture}
+\end{center}
+
+\noindent Je suis en train d'enrichir \tautop~avec deux orientations. \newline
+La direction $\downarrow$ de la perception est le point de vue \sbj.\newline
+La direction $\uparrow$ de la connaissance est le point de vue \obj
 \end{I}
 
-%
+%116
+\begin{I}[u]
+Simplifions \tautop: \hspace{.6cm}
+\begin{tikzpicture}[scale=.3,baseline=-0.5ex]
+
+\def\r{1}
+\def\ra{1.45} % rayon des flèches (un peu au-dessus du cercle)
+
+% Cercle principal
+\draw[thick] (0,0) circle (\r);
+
+% Point en haut
+%\fill (0,\r) circle (1.5pt);
+  \node[darkdot] (Z) at (0,\r) {};
+% Flèche gauche (arc de cercle)
+\draw[->,thick]
+  (100:\ra) arc[start angle=100, end angle=140, radius=\ra];
+
+% Flèche droite (symétrique)
+\draw[->,thick]
+  (80:\ra) arc[start angle=80, end angle=40, radius=\ra];
+
+\end{tikzpicture}
+
+\begin{itemize}[label=$\bullet$]
+\item Un cercle $S^1$
+\item Un point distinct $\circ \in S^1$
+\item Deux orientations, a.k.a. $\pm 1$
+\end{itemize}
+Décrétons arbitrairement que $+1\equiv$ perception et $-1\equiv$ connaissance.
+\end{I}
+
+%117
+\begin{I}
+Suite sur \ref{I116}:
+\begin{center}
+$\left( S^1, +1, \circ\in S^1\right)$ monde subjectif de $\circ$\\
+$\left( S^1, -1, \circ\in S^1\right)$ monde objectif de $\circ$
+\end{center}
+\end{I}
+
+%118
+\begin{I}
+Notons que \schisme~génère $-1\neq +1$
+\end{I}
+
+%119
+\begin{I}
+Par $-1\equiv$ connaissance je veux dire établissement de la connaissance.
+\end{I}
+
+%120
+\begin{I}
+Je cherche la manière de représenter une trajectoire continue dans $S^1$ qui respecte l'une des orientations ($+1$) ou l'autre ($-1$). \newline\mbox{$f:[0,1]\to S^1$} une bijection continue. \newline 
+Je pressens que c'est un théorème que toute bijection continue
+\mbox{$[0,1]\to S^1$} respecte soit la direction $+1$, ou bien $-1$.
+\end{I}
+
+%121
+\begin{I}
+Je viens de me rendre compte qu'en termes topologiques, \tautop~et \B~sont identiques. C'est la confusion avec les surfaces 2D qui m'a induit en erreur. Je me fouvoyais en raisonnant sur\\
+\vspace{1cm}
+\hspace{1cm}
+\begin{tikzpicture}[scale=2, thick]
+
+  % Parameters for the ellipses
+  \def\a{1.4}   % outer x radius
+  \def\b{0.6}   % outer y radius
+  \def\ai{0.8}  % inner x radius
+  \def\bi{0.3}  % inner y radius
+
+  % Pinch point (The Singularity)
+  \coordinate (P) at (-0.3, 0.5);
+
+  % =========================
+  % Shaded ring (outer - inner)
+  % =========================
+  \fill[gray!40, even odd rule]
+    % --- Outer Boundary ---
+    (0:\a) arc[start angle=0, end angle=75, x radius=\a, y radius=\b]
+    % Smooth curve diving into the pinch
+    .. controls (0.1, 0.6) and (-0.1, 0.55) .. (P)
+    % Smooth curve leaving the pinch
+    .. controls (-0.6, 0.4) and (-0.9, 0.3) .. (165:\a)
+    % Rest of the outer ellipse
+    arc[start angle=165, end angle=360, x radius=\a, y radius=\b]
+    
+    % --- Inner Boundary (Drawn backwards to cut the hole) ---
+    (360:\ai) arc[start angle=360, end angle=165, x radius=\ai, y radius=\bi]
+    % Curve reaching up to the pinch point
+    .. controls (-0.6, 0.15) and (-0.4, 0.35) .. (P)
+    % Curve dropping back down to the inner ellipse
+    .. controls (-0.2, 0.4) and (0, 0.35) .. (75:\ai)
+    % Rest of the inner ellipse
+    arc[start angle=75, end angle=0, x radius=\ai, y radius=\bi];
+
+  % =========================
+  % Visible Borders (For clarity and sketch style)
+  % =========================
+  
+  % Outer contour
+  \draw 
+    (0:\a) arc[start angle=0, end angle=75, x radius=\a, y radius=\b]
+    .. controls (0.1, 0.6) and (-0.1, 0.55) .. (P)
+    .. controls (-0.6, 0.4) and (-0.9, 0.3) .. (165:\a)
+    arc[start angle=165, end angle=360, x radius=\a, y radius=\b];
+
+  % Inner contour
+  \draw 
+    (360:\ai) arc[start angle=360, end angle=165, x radius=\ai, y radius=\bi]
+    .. controls (-0.6, 0.15) and (-0.4, 0.35) .. (P)
+    .. controls (-0.2, 0.4) and (0, 0.35) .. (75:\ai)
+    arc[start angle=75, end angle=0, x radius=\ai, y radius=\bi];
+
+  % =========================
+  % Singularity point (darkdot)
+  % =========================
+  \fill[black] (P) circle (1.5pt);
+
+\end{tikzpicture}
+\end{I}
+
+%122
 \begin{I}
 \end{I}
 
-%
+%123
 \begin{I}
 \end{I}
 
+%124
+\begin{I}
+\end{I}
+
+%125
+\begin{I}
+\end{I}
+
+%126
+\begin{I}
+\end{I}
 
 
 \end{document}
