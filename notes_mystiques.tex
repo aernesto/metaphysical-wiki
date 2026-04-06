@@ -1618,57 +1618,51 @@ Je viens de me rendre compte qu'en termes topologiques, \tautop~et \B~sont ident
 \hspace{1cm}
 \begin{tikzpicture}[scale=2, thick]
 
-  % Parameters for the ellipses
-  \def\a{1.4}   % outer x radius
-  \def\b{0.6}   % outer y radius
+  % Parameters for the basic ellipses
+  \def\a{1.6}   % outer x radius
+  \def\b{0.7}   % outer y radius
   \def\ai{0.8}  % inner x radius
-  \def\bi{0.3}  % inner y radius
+  \def\bi{0.35} % inner y radius
 
-  % Pinch point (The Singularity)
-  \coordinate (P) at (-0.3, 0.5);
+  % Singularity (Pinch) Point coordinates
+  \coordinate (P) at (-0.7, 0.45);
 
   % =========================
-  % Shaded ring (outer - inner)
+  % 1. Shaded Ring
   % =========================
-  \fill[gray!40, even odd rule]
-    % --- Outer Boundary ---
-    (0:\a) arc[start angle=0, end angle=75, x radius=\a, y radius=\b]
-    % Smooth curve diving into the pinch
-    .. controls (0.1, 0.6) and (-0.1, 0.55) .. (P)
-    % Smooth curve leaving the pinch
-    .. controls (-0.6, 0.4) and (-0.9, 0.3) .. (165:\a)
-    % Rest of the outer ellipse
-    arc[start angle=165, end angle=360, x radius=\a, y radius=\b]
+  \fill[gray!30, even odd rule]
+    % --- Outer boundary path ---
+    (0:\a) arc[start angle=0, end angle=90, x radius=\a, y radius=\b] 
+    .. controls (-0.3, \b) and (-0.5, 0.55) .. (P) 
+    .. controls (-0.9, 0.35) and (-\a, 0.3) .. (180:\a) 
+    arc[start angle=180, end angle=360, x radius=\a, y radius=\b] -- cycle
     
-    % --- Inner Boundary (Drawn backwards to cut the hole) ---
-    (360:\ai) arc[start angle=360, end angle=165, x radius=\ai, y radius=\bi]
-    % Curve reaching up to the pinch point
-    .. controls (-0.6, 0.15) and (-0.4, 0.35) .. (P)
-    % Curve dropping back down to the inner ellipse
-    .. controls (-0.2, 0.4) and (0, 0.35) .. (75:\ai)
-    % Rest of the inner ellipse
-    arc[start angle=75, end angle=0, x radius=\ai, y radius=\bi];
+    % --- Inner boundary path (hole) ---
+    (0:\ai) arc[start angle=0, end angle=90, x radius=\ai, y radius=\bi]
+    .. controls (-0.3, \bi) and (-0.5, 0.4) .. (P)
+    .. controls (-0.75, 0.3) and (-\ai, 0.2) .. (180:\ai)
+    arc[start angle=180, end angle=360, x radius=\ai, y radius=\bi] -- cycle;
 
   % =========================
-  % Visible Borders (For clarity and sketch style)
+  % 2. Outer Contour Line
   % =========================
-  
-  % Outer contour
   \draw 
-    (0:\a) arc[start angle=0, end angle=75, x radius=\a, y radius=\b]
-    .. controls (0.1, 0.6) and (-0.1, 0.55) .. (P)
-    .. controls (-0.6, 0.4) and (-0.9, 0.3) .. (165:\a)
-    arc[start angle=165, end angle=360, x radius=\a, y radius=\b];
-
-  % Inner contour
-  \draw 
-    (360:\ai) arc[start angle=360, end angle=165, x radius=\ai, y radius=\bi]
-    .. controls (-0.6, 0.15) and (-0.4, 0.35) .. (P)
-    .. controls (-0.2, 0.4) and (0, 0.35) .. (75:\ai)
-    arc[start angle=75, end angle=0, x radius=\ai, y radius=\bi];
+    (0:\a) arc[start angle=0, end angle=90, x radius=\a, y radius=\b]
+    .. controls (-0.3, \b) and (-0.5, 0.55) .. (P)
+    .. controls (-0.9, 0.35) and (-\a, 0.3) .. (180:\a)
+    arc[start angle=180, end angle=360, x radius=\a, y radius=\b];
 
   % =========================
-  % Singularity point (darkdot)
+  % 3. Inner Contour Line
+  % =========================
+  \draw 
+    (0:\ai) arc[start angle=0, end angle=90, x radius=\ai, y radius=\bi]
+    .. controls (-0.3, \bi) and (-0.5, 0.4) .. (P)
+    .. controls (-0.75, 0.3) and (-\ai, 0.2) .. (180:\ai)
+    arc[start angle=180, end angle=360, x radius=\ai, y radius=\bi];
+
+  % =========================
+  % 4. The Singularity Dot
   % =========================
   \fill[black] (P) circle (1.5pt);
 
