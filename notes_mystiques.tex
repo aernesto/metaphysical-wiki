@@ -1616,57 +1616,51 @@ Je pressens que c'est un théorème que toute bijection continue
 Je viens de me rendre compte qu'en termes topologiques, \tautop~et \B~sont identiques. C'est la confusion avec les surfaces 2D qui m'a induit en erreur. Je me fouvoyais en raisonnant sur\\
 \vspace{1cm}
 \hspace{1cm}
-\begin{tikzpicture}[scale=2, thick]
+\begin{tikzpicture}[baseline=-0.5ex,scale=.5]
 
-  % Parameters for the basic ellipses
-  \def\a{1.6}   % outer x radius
-  \def\b{0.7}   % outer y radius
-  \def\ai{0.8}  % inner x radius
-  \def\bi{0.35} % inner y radius
+  % Fill the left "lens"
+  %\fill[lightgray] (-0.8,0.8) arc (180:270:0.8) arc (90:180:0.8) -- cycle; c shit
 
-  % Singularity (Pinch) Point coordinates
-  \coordinate (P) at (-0.7, 0.45);
+  % Fill the right "lens"
+  %\fill[lightgray] (-0.8,0.8) arc (180:270:0.8) arc (180:90:0.8) -- cycle; %ca
+  %\fill[lightgray] (-0.8,0.8) arc (90:0:0.8) arc (180:90:0.8) -- cycle;  %ba wrong
+  \fill[lightgray] (-0.8,0.8) arc (180:270:0.8) arc (270:360:0.8) -- cycle; %cd
+    %\fill[lightgray] (-0.8,0.8) arc (270:360:0.8) arc (180:270:0.8) -- cycle; %dc wrong
+ % \fill[lightgray] (-0.8,0.8) arc (180:90:0.8) arc (90:0:0.8) -- cycle; % ab
+  \fill[lightgray] (-0.8,-0.8) arc (180:90:0.8) arc (90:0:0.8) -- cycle; % ab
+        %\fill[lightgray] (-0.8,0.8) arc (180:90:0.8) arc (180:270:0.8)-- cycle;  % ac wrong
+       % \fill[lightgray] (-0.8,0.8) arc (180:90:0.8) arc (270:360:0.8) -- cycle; % ad wrong
+       % \fill[lightgray] (-0.8,-0.8) arc (270:360:0.8) arc  (180:90:0.8) -- cycle; % da wrong
+        %\fill[lightgray] (-0.8,-0.8) arc (90:0:0.8) arc (270:360:0.8) -- cycle; % bd wrong
+        %close \fill[lightgray] (-0.8,-0.8) arc (270:360:0.8) arc (90:0:0.8)  -- cycle; % db close
+  % central four arcs
+  \draw[line width=.8pt] (-0.8,-0.8) arc (180:90:0.8);%a
+  \draw[line width=.8pt] (0,0) arc (90:0:0.8);%b
+  \draw[line width=.8pt] (-0.8,0.8) arc (180:270:0.8);%c
+  \draw[line width=.8pt] (0,0) arc (270:360:0.8);%d
 
-  % =========================
-  % 1. Shaded Ring
-  % =========================
-  \fill[gray!30, even odd rule]
-    % --- Outer boundary path ---
-    (0:\a) arc[start angle=0, end angle=90, x radius=\a, y radius=\b] 
-    .. controls (-0.3, \b) and (-0.5, 0.55) .. (P) 
-    .. controls (-0.9, 0.35) and (-\a, 0.3) .. (180:\a) 
-    arc[start angle=180, end angle=360, x radius=\a, y radius=\b] -- cycle
+  \node[circle, fill=black, inner sep=1.5pt] at (0,0) {};
+
+  % dashed semi-oval on the right
+  \draw[dashed, line width=.8pt]
+    (0.8,0.8) arc[start angle=180, end angle=0, x radius=.35, y radius=0.25];
+  \draw[dashed, line width=.8pt] (1.5, .8) -- (1.5, -.8);
+  \draw[dashed, line width=.8pt]
+    (0.8,-0.8) arc[start angle=180, end angle=360, x radius=.35, y radius=0.25];
+
+  % dashed semi-oval on the left
+  \draw[dashed, line width=.8pt]
+    (-0.8,0.8) arc[start angle=0, end angle=180, x radius=.35, y radius=0.25];
+  \draw[dashed, line width=.8pt] (-1.5, .8) -- (-1.5, -.8);
+  \draw[dashed, line width=.8pt]
+    (-0.8,-0.8) arc[start angle=360, end angle=180, x radius=.35, y radius=0.25];
     
-    % --- Inner boundary path (hole) ---
-    (0:\ai) arc[start angle=0, end angle=90, x radius=\ai, y radius=\bi]
-    .. controls (-0.3, \bi) and (-0.5, 0.4) .. (P)
-    .. controls (-0.75, 0.3) and (-\ai, 0.2) .. (180:\ai)
-    arc[start angle=180, end angle=360, x radius=\ai, y radius=\bi] -- cycle;
-
-  % =========================
-  % 2. Outer Contour Line
-  % =========================
-  \draw 
-    (0:\a) arc[start angle=0, end angle=90, x radius=\a, y radius=\b]
-    .. controls (-0.3, \b) and (-0.5, 0.55) .. (P)
-    .. controls (-0.9, 0.35) and (-\a, 0.3) .. (180:\a)
-    arc[start angle=180, end angle=360, x radius=\a, y radius=\b];
-
-  % =========================
-  % 3. Inner Contour Line
-  % =========================
-  \draw 
-    (0:\ai) arc[start angle=0, end angle=90, x radius=\ai, y radius=\bi]
-    .. controls (-0.3, \bi) and (-0.5, 0.4) .. (P)
-    .. controls (-0.75, 0.3) and (-\ai, 0.2) .. (180:\ai)
-    arc[start angle=180, end angle=360, x radius=\ai, y radius=\bi];
-
-  % =========================
-  % 4. The Singularity Dot
-  % =========================
-  \fill[black] (P) circle (1.5pt);
-
 \end{tikzpicture}
+\qquad vs \qquad \begin{tikzpicture}\tikz[scale=.56, baseline=2.63ex]{
+  \draw[symstroke, fill=gray!30] (0,0.5) circle (0.5);
+  \draw[symstroke, fill=gray!30] (0,-0.5) circle (0.5);
+  \node[darkdot] at (0,0) {};
+}\end{tikzpicture}
 \end{I}
 
 %122
