@@ -13,7 +13,7 @@
 \usepackage{tipa}
 \usepackage{xparse}
 \usepackage{enumitem}
-\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{amsmath,amssymb,mathrsfs,mathtools}
 \usepackage{graphicx}
 \usepackage{xcolor} % For link colors
 \usepackage{ccicons} % For the CC BY 4.0 icon
@@ -1342,7 +1342,7 @@ Schéma pour le tryptique \ref{I18}
 
 %106
 \begin{I}
-\obj nous est révélé grâce à \reg~dans \percept
+\obj~nous est révélé grâce à \reg~dans \percept
 \end{I}
 
 %107
@@ -1712,20 +1712,104 @@ Ces mots (suite de \ref{I126}) se situent dans l'espace public. Ils font le pont
 
 %129
 \begin{I}
-Soit $\threebranch$ l'expérience partagée.
+Soit $\threebranch$ l'expérience partagée. C'est le symbole pour \ref{I103}.
 \end{I}
 
 %130
 \begin{I}
+Retour sur \ref{I28}. \obj~se construit dans $\threebranch$ en plus de \ref{I105}.
 \end{I}
 
 %131
 \begin{I}
+Autre dessin de \ref{I38}\newline
+
+\begin{tikzpicture}
+
+% Hand-drawn style
+\tikzset{
+  handdrawn/.style={
+    thick,
+    decorate,
+    decoration={random steps, segment length=3pt, amplitude=0.6pt}
+  },
+  dot/.style={circle, fill=black, inner sep=2pt},
+  spike/.style={thick}
+}
+
+% Oval (hand-drawn look)
+\draw[handdrawn] (0,0) ellipse (3 and 1.8);
+
+% Text above oval
+%\node at (0,2.4) {une mer de \obj};
+
+% Macro for the spike shape
+\newcommand{\spike}{
+  \begin{tikzpicture}[scale=0.15]
+    \draw[spike]
+      (-2,0) .. controls (-0.3,0) and (-0.1,6) .. (0,6)
+      .. controls (0.1,2) and (0.3,0) .. (2,0);
+  \end{tikzpicture}
+}
+
+% Six spike shapes
+\node at (-1.5,0.6) {\spike};
+\node at (-0.8,-0.7) {\spike};
+\node at (0.5,0.9) {\spike};
+\node at (1.6,-0.4) {\spike};
+\node at (0.2,-0.2) {\spike};
+\node at (-2,0) {\spike};
+
+\end{tikzpicture}
+
+Tous les \sbj~sont liés par \obj
 \end{I}
 
+%132
+\begin{I}\sbj~est plus ample que \mata. \mata~n'est rien d'autre que \bouclebas~dans \sbj. \sbj~est un espace: l'espace privé.
+\end{I}
+
+%133
+\begin{I}
+Des évènements ont cours dans \sbj. Je soupçonne $(\schisme,\reg)$ d'être impliqué.
+\end{I}
+%134
+\begin{I}
+Soit $\tau$ le temps: $\tau\coloneqq (\schisme,\reg)$.
+\end{I}
+%135
+\begin{I}
+Cosmologie: soit \dieu (Brahman) une nappe et $\tau$ la poudre (Maya).
+\end{I}
+%136
+\begin{I}
+$S^1=\mathbb{R}/\mathbb{Z}$     (Je ne suis plus sûr)
+\end{I}
+%137
+\begin{I}
+As-tu une métaphysique, Ô lecteur?
+Crois-tu en un Dieu surnaturel créateur du monde et de l'humain?\\
+Ou bien es-tu un physicaliste qui a une foi inébranlable en les pouvoirs explicatifs de la physique et des sciences naturelles? Ou bien encore, es-tu un sceptique à l'ancienne qui suspend son jugement sur la véritable nature du monde parce que nous n'avons aucun moyen de faire des progrès?\\
+Moi j'essaie de construire une métaphysique Ô lecteur, de mes mains spirituelles propres. Je suis convaincu des limites de
+mon entendement, et malgré tout, reste mû par une soif de savoir, d'exploration et d'échanges avec toi.\\
+Je crée une métaphysique et te la présente parce que j'en ai envie, au plus profond de moi.\\
+Cet endroit, au plus profond de moi, Ô lecteur, je l'appelle \mata.
+\end{I}
+%138
+\begin{I}
+\mata
+\end{I}
 %
 \begin{I}
 \end{I}
-
+%
+\begin{I}
+\end{I}
+%
+\begin{I}
+\end{I}
+%
+\begin{I}
+\end{I}
 
 \end{document}
