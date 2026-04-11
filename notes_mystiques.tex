@@ -1811,32 +1811,18 @@ C'est ainsi que je vis \mata~au quotidien, et je sais que j'existe. C'est peut-Ã
 %
 \begin{I}
 Recherche de symboles pour \mata.\\
-\begin{tikzpicture}[scale=1, line width=0.8pt]
 
-% Flame shape (symmetric, smooth, flat tangent at base)
-\draw
-  (0,2)
-  .. controls (-0.9,1.2) and (-0.8,0) .. (0,0)
-  .. controls (0.8,0) and (0.9,1.2) .. (0,2);
-
-% Circle at the base (tangent to the flame at the origin)
-\draw (0,0.35) circle (0.35);
-
-\end{tikzpicture}\\
-\begin{tikzpicture}[scale=2, line width=0.8pt]
-
-% Flame shape (wider base, S-curve inflection at the tip)
-\draw
-  (0,2)
-  .. controls (-0.3,1.2) and (-1.2,0) .. (0,0)
-  .. controls (1.2,0) and (0.3,1.2) .. (0,2);
-
-% Circle at the base (tangent to the flame at the origin)
-\draw (0,0.35) circle (0.35);
-
-\end{tikzpicture}\\
 \begin{tikzpicture}[scale=1.2, line width=0.8pt]
+\newcommand{\drawflame}[1]{%
+  \begin{scope}[shift={#1}]
+    \draw
+      (0,1.5)
+      .. controls (-0.3,1) and (-1.5,-0.2) .. (0,-0.2)
+      .. controls (1.5,-0.2) and (0.3,1) .. (0,1.5);
 
+    \draw (0,0.05) circle (0.25);
+  \end{scope}
+}
 % --- Top row small sketches ---
 % left: line + small circle
 \draw (-3.7,4) -- (-2.8,4);
@@ -1856,24 +1842,27 @@ Recherche de symboles pour \mata.\\
 \draw (3.2,3.4) circle (0.1);
 
 % --- Middle left large drop ---
-\draw (-2,1.8)
-  .. controls (-2.8,3.2) and (-1.2,3.2) .. (-0.8,1.8)
-  .. controls (-1.0,0.8) and (-2.6,0.8) .. (-2,1.8);
-\draw (-2,1.0) circle (0.25);
+% Flame shape (wider base, S-curve inflection at the tip)
+
+% 1er modele
+%\draw
+  %(0,2)
+  %.. controls (-0.3,1.2) and (-1.2,0) .. (0,0)
+  %.. controls (1.2,0) and (0.3,1.2) .. (0,2);
+
+% Circle at the base (tangent to the flame at the origin)
+%\draw (0,0.35) circle (0.35);
+
+% deuxieme modele
+%\draw (-2,1.8)
+ % .. controls (-2.3,1) and (-3.2,-0.2) .. (-2,-0.2)
+  %.. controls (-0.8,-0.2) and (-1.7,1) .. (-2,1.8);
+%\draw (-2,0.05) circle (0.25);
+\drawflame{(-2,1.8)}
 
 % --- Middle right large circle ---
 \draw (2.8,1.6) circle (0.9);
 \draw (2.8,0.8) ellipse (0.3 and 0.2);
-
-% --- Bottom left smaller drop ---
-\draw (-2,-0.8)
-  .. controls (-2.6,0.4) and (-1.4,0.4) .. (-1.2,-0.8)
-  .. controls (-1.4,-1.6) and (-2.6,-1.6) .. (-2,-0.8);
-\draw (-2,-1.2) circle (0.25);
-
-% --- Bottom right smaller oval ---
-\draw (2.6,-0.8) ellipse (0.8 and 1.0);
-\draw (2.6,-1.6) arc (180:0:0.3 and 0.25);
 
 % --- Text annotations (handwritten-style placement) ---
 \node at (-2,-2.5) {\small homme};
