@@ -1813,14 +1813,21 @@ C'est ainsi que je vis \mata~au quotidien, et je sais que j'existe. C'est peut-Ã
 Recherche de symboles pour \mata.\\
 
 \begin{tikzpicture}[scale=1.2, line width=0.8pt]
-\newcommand{\drawflame}[1]{%
-  \begin{scope}[shift={#1}]
+\newcommand{\drawflame}[2][]{%
+  \begin{scope}[shift={#2}, transform shape, #1]
     \draw
       (0,1.55)
-      .. controls (-0.1,1.25) and (-1.65,-0.35) .. (0,-0.25)
-      .. controls (1.65,-0.35) and (0.1,1.25) .. (0,1.55);
+      .. controls (-0.18,1.25) and (-1.65,-0.35) .. (0,-0.2)
+      .. controls (1.65,-0.35) and (0.18,1.25) .. (0,1.55);
 
-    \draw (0,-0.05) circle (0.2);
+    \draw (0,0.05) circle (0.25);
+  \end{scope}
+}
+
+\newcommand{\drawdoublecircle}[2][]{%
+  \begin{scope}[shift={#2}, transform shape, #1]
+    \draw (0,0) circle (0.5);
+    \draw (0,-0.4) circle (0.1);
   \end{scope}
 }
 % --- Top row small sketches ---
@@ -1833,36 +1840,23 @@ Recherche de symboles pour \mata.\\
 \draw (-0.9,3.764) circle (0.08);
 
 % middle-right: small drop
-\draw (0.8,3.6) .. controls (1.2,4.4) and (1.8,4.4) .. (2.2,3.6)
-      .. controls (1.9,3.2) and (1.1,3.2) .. (0.8,3.6);
-\draw (1.5,3.45) circle (0.08);
+\drawflame[scale=.31, transform shape]{(1,3.84)}
 
 % right: circle + small circle
-\draw (3.2,3.8) circle (0.5);
-\draw (3.2,3.4) circle (0.1);
+%\draw (3.2,3.8) circle (0.5);
+%\draw (3.2,3.4) circle (0.1);
+
+\drawdoublecircle[scale=0.6]{(2.9,4)}
 
 % --- Middle left large drop ---
 % Flame shape (wider base, S-curve inflection at the tip)
 
-% 1er modele
-%\draw
-  %(0,2)
-  %.. controls (-0.3,1.2) and (-1.2,0) .. (0,0)
-  %.. controls (1.2,0) and (0.3,1.2) .. (0,2);
-
-% Circle at the base (tangent to the flame at the origin)
-%\draw (0,0.35) circle (0.35);
-
-% deuxieme modele
-%\draw (-2,1.8)
- % .. controls (-2.3,1) and (-3.2,-0.2) .. (-2,-0.2)
-  %.. controls (-0.8,-0.2) and (-1.7,1) .. (-2,1.8);
 %\draw (-2,0.05) circle (0.25);
-\drawflame{(-2,1.8)}
+\drawflame[scale=.85, transform shape]{(-2,1.8)}
 
 % --- Middle right large circle ---
-\draw (2.8,1.6) circle (0.9);
-\draw (2.8,0.8) ellipse (0.3 and 0.2);
+
+\drawdoublecircle[scale=1.3]{(1.39,2.3)}
 
 % --- Text annotations (handwritten-style placement) ---
 \node at (-2,-2.5) {\small homme};
