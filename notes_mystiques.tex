@@ -93,7 +93,23 @@
     \draw[line width=0.7pt] (0.9,0) -- (.9,-.3);
   }\hspace{0.2mm}%
 }
+\newcommand{\drawflame}[2][]{%
+  \begin{scope}[shift={#2}, transform shape, #1]
+    \draw
+      (0,1.55)
+      .. controls (-0.18,1.25) and (-1.65,-0.35) .. (0,-0.2)
+      .. controls (1.65,-0.35) and (0.18,1.25) .. (0,1.55);
 
+    \draw (0,0.05) circle (0.25);
+  \end{scope}
+}
+
+\newcommand{\drawdoublecircle}[2][]{%
+  \begin{scope}[shift={#2}, transform shape, #1]
+    \draw (0,0) circle (0.5);
+    \draw (0,-0.4) circle (0.1);
+  \end{scope}
+}
 
 \newcommand{\B}{
 \tikz[scale=.22,baseline=-0.5ex]{
@@ -1813,23 +1829,7 @@ C'est ainsi que je vis \mata~au quotidien, et je sais que j'existe. C'est peut-�
 Recherche de symboles pour \mata.\\
 
 \begin{tikzpicture}[scale=1.2, line width=0.8pt]
-\newcommand{\drawflame}[2][]{%
-  \begin{scope}[shift={#2}, transform shape, #1]
-    \draw
-      (0,1.55)
-      .. controls (-0.18,1.25) and (-1.65,-0.35) .. (0,-0.2)
-      .. controls (1.65,-0.35) and (0.18,1.25) .. (0,1.55);
 
-    \draw (0,0.05) circle (0.25);
-  \end{scope}
-}
-
-\newcommand{\drawdoublecircle}[2][]{%
-  \begin{scope}[shift={#2}, transform shape, #1]
-    \draw (0,0) circle (0.5);
-    \draw (0,-0.4) circle (0.1);
-  \end{scope}
-}
 % --- Top row small sketches ---
 % left: line + small circle
 \draw (-3.7,4) -- (-2.8,4);
@@ -1881,10 +1881,17 @@ Parfois je doute de comment je dois agir dans le monde, devant mes perceptions d
 
 %143
 \begin{I}
-Avec \begin{tikzpicture}\end{tikzpi
+Avec \begin{tikzpicture}\drawflame[scale=.23, transform shape]{(-0.2,-0.8)}\end{tikzpicture} je n'ai pas peur.
 \end{I}
+
 %144
-\begin{I}
+\begin{I}\begin{tikzpicture}[scale=1]
+\draw (-1.6,3.9) .. controls (-1.2,3.6) and (-0.6,3.6) .. (-0.2,3.9);
+\draw (-0.9,3.764) circle (0.08);\end{tikzpicture}, ouvert, a du sens aussi. Quand je respire, je suis connecté au monde extérieur, et je sens que son énergie passe à travers moi, rentre et sort de moi. Je me sens comme au passage d'une rivière, et le monde extérieur est l'eau qui coule au travers de moi. Je suis, parfois, dans cet état, 
+\begin{tikzpicture}[scale=1]
+\draw (-1.6,3.9) .. controls (-1.2,3.6) and (-0.6,3.6) .. (-0.2,3.9);
+\draw (-0.9,3.764) circle (0.08);\end{tikzpicture}, ouvert, le passage d'une rivière; et la
+rivière est \dieu, le monde éternel.
 \end{I}
 %
 \begin{I}
