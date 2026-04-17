@@ -2075,28 +2075,79 @@ But, what if I add context, so that:
 \begin{I}\begin{center}
 \begin{tikzpicture}
 \node (c) at (.12,4.1) {};
-\draw (0,4) circle (.25);
-\node (C) at (1.3,2.73) {};
-\draw (0,2.25) circle (1.5);
+\draw[line width=.8] (0,4) circle (.25);
+\node[line width=.8] (C) at (1.3,2.73) {};
+\draw[line width=.8] (0,2.25) circle (1.5);
 
 \node (sbj) at (2.2, 4.5) {\sbj};
 \node (obj) at (2.63, 3.74) {\obj};
 
- \draw[->] (sbj.west) .. controls +(-1,0) and +(-.1,0.1) .. (c.north);
-  \draw[->] (obj.south) .. controls +(.1,-1) and +(0,0.1) .. (C.east);
+ \draw[->, shorten >=2pt] (sbj.west) .. controls +(-1,0) and +(-.1,0.1) .. (c.north);
+  \draw[->, shorten >=2pt] (obj.south) .. controls +(.1,-1) and +(0,0.1) .. (C.east);
 \end{tikzpicture}
 \end{center}
 \end{I}
 
-%
-\begin{I}
+%154
+\begin{I}\begin{center}
+\begin{tikzpicture}
+
+\draw[line width=.8] (0,4) circle (.25);
+  \node[darkdot] (c) at (0,3.75) {};
+
+\draw[line width=.8] (0,2.25) circle (1.5);
+  \node[darkdot] (C) at (0,.75) {};
+\node (sbj) at (3.2, 4.5) {Les points divins, les};
+\node (obj) at (3.2, 4) {points mystérieux.};
+\node () at (5, 3.5) {(souvenons-nous \ref{I15})};
+
+ \draw[->, shorten >=5pt] (sbj.west) -- (c.east);
+  \draw[->, shorten >=5pt] (obj.south) .. controls +(0,-1) and +(2,-0.1) .. (C.east);
+\end{tikzpicture}
+\end{center}
+
+Le demi-cercle du symbole ``\obj''~est ouvert pour montrer que notre horizon de compréhension est limité. On suppose, conceptuellement, que le cercle est clos en bas, que le monde $\circledcirc$ est 1, le monde se clôture dans le point divin.
 \end{I}
 
-%
+%155
 \begin{I}
-\end{I}
-%
+Fractale?
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+
+    \def\nbCercles{6}
+    \def\rayonBase{0.5}
+
+    \foreach \i in {1,...,\nbCercles}
+    {
+        % Calcul du rayon et du centre
+        \pgfmathsetmacro{\rayon}{\i * \rayonBase}
+        
+        % Définition du style selon l'index
+        \tikzset{monStyle/.style={draw}} % Réinitialise le style par défaut
+        
+        \ifnum\i=1
+            \tikzset{monStyle/.style={dotted, thick}}
+        \else
+            \ifnum\i=\nbCercles
+                \tikzset{monStyle/.style={dotted, thick}}
+            \else
+                \tikzset{monStyle/.style={solid, thin}}
+            \fi
+        \fi
+
+        % Dessin du cercle avec le style dynamique
+        \draw[monStyle] (0, \rayon) circle (\rayon);
+    }
+
+    % Petit point au centre commun pour vérification
+    \fill (0,0) circle (1.5pt);
+
+\end{tikzpicture}\end{center}\end{I}
+
+%I156
 \begin{I}
+Retour sur \ref{I111} et \ref{I153}: Le corps est un point divin.
 \end{I}
 %
 \begin{I}
@@ -2110,7 +2161,7 @@ But, what if I add context, so that:
 
 % PORTABLE - APRES CAHIER
 \begin{I}
-Principe de vérité de la téléologie.
+\verite~téléologie
 \end{I}
 %
 \begin{I}
