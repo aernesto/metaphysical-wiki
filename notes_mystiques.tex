@@ -2017,6 +2017,86 @@ Continuation de \ref{I148}
 
 \end{tikzpicture}
 \end{center}
+Call $I$ the input $\mathcal{O}$ the output and $C$ the channel device.
+\begin{center}
+\begin{tikzpicture}[scale=.41]
+
+% Styles
+\tikzset{
+  obj/.style={draw, line width=0.8pt},
+  arrow/.style={->, line width=0.8pt}
+}
+
+% Noeuds principaux
+\node (C1) at (0,0) {$I$};
+\node[obj, rectangle] (R) at (4,0) {$C$};
+\node (C2) at (8,0) {$\mathcal{O}$};
+% Flèches des labels vers objets
+\draw[arrow] (C1) -- (R);
+\draw[arrow] (R) -- (C2);
+\end{tikzpicture}
+
+\end{center}
+\end{I}
+
+%151
+\begin{I}
+What does the following mean?
+\begin{center}
+\begin{tikzpicture}[>=stealth, thick]
+
+    % Dessin du carré central avec la lettre C
+    \node (carre) at (0,0) [draw] {$C$};
+
+    % Première flèche (droite -> demi-tour -> sous le carré)
+    % Part de la paroi droite, va vers la droite, demi-tour vers le bas
+    \draw[->] (carre.east) .. controls +(1,0) and +(1,0) .. (0,-1);
+
+    % Deuxième flèche (sous le carré -> demi-tour -> gauche)
+    % Part de là où la première s'arrête (0,-1), va vers la gauche,
+    % demi-tour vers le haut pour arriver à la paroi gauche
+    \draw[->] (0,-1) .. controls +(-1,0) and +(-1,0) .. (carre.west);
+
+\end{tikzpicture}
+\end{center}
+\end{I}
+
+%152
+\begin{I}
+Suite de \ref{I150}. It makes me think of an iterative map: $f^n(x)$.\\
+But, what if I add context, so that:
+\begin{itemize}
+\item The channel changes between iterations
+\item The external world changes between iterations
+\end{itemize}
+\end{I}
+
+%153
+\begin{I}\begin{center}
+\begin{tikzpicture}
+\node (c) at (.12,4.1) {};
+\draw (0,4) circle (.25);
+\node (C) at (1.3,2.73) {};
+\draw (0,2.25) circle (1.5);
+
+\node (sbj) at (2.2, 4.5) {\sbj};
+\node (obj) at (2.63, 3.74) {\obj};
+
+ \draw[->] (sbj.west) .. controls +(-1,0) and +(-.1,0.1) .. (c.north);
+  \draw[->] (obj.south) .. controls +(.1,-1) and +(0,0.1) .. (C.east);
+\end{tikzpicture}
+\end{center}
+\end{I}
+
+%
+\begin{I}
+\end{I}
+
+%
+\begin{I}
+\end{I}
+%
+\begin{I}
 \end{I}
 %
 \begin{I}
@@ -2024,8 +2104,9 @@ Continuation de \ref{I148}
 %
 \begin{I}
 \end{I}
-
-
+%
+\begin{I}
+\end{I}
 
 % PORTABLE - APRES CAHIER
 \begin{I}
