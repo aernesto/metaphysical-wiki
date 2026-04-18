@@ -2221,8 +2221,40 @@ Et avec le temps, $A$ est déconnecté de $B$ et de $A'$.\\
 
 %162 
 \begin{I}
-
+\begin{description}
+\item[Modèle 1:] L'agent expérientiel.\\ Il peut percevoir (et faire une \xp).\\
+Il met en mots pour exprimer la perception.
+\end{description}
+Soient deux agents expérientiels $A$ et $B$, qui observent un objet $x$ dans \obj.
 \end{I}%
+
+\begin{center}
+\begin{tikzpicture}
+
+\draw[line width=.8, dashed] (-3.4,0) circle (.36);
+  \node at (-3.4,0) {\xp};
+  \node (A) at (-2.8,0) {$A$};
+  \node (atop) at (-2.6,0.1) {};
+  \node (abot) at (-2.6,-0.1) {};
+\node (m) at (0,0.16) {match?};
+\node (x) at (0,-.81) {$x$};
+ \draw[->, shorten >=5pt] (atop.east) -- (m.west)
+   node[midway, above, sloped] {rapport};
+  \draw[->, shorten >=5pt] (abot.east) -- (x.west)
+    node[midway, below, sloped] {observation};
+   
+   \draw[line width=.8, dashed] (3.6,0) circle (.36);
+      \node at (3.6,0) {\xp};
+  \node (B) at (3,0) {$B$};
+  \node (btop) at (2.6,0.1) {};
+  \node (bbot) at (2.6,-0.1) {};
+ \draw[->, shorten >=5pt] (btop.east) -- (m.east)
+   node[midway, above, sloped] {rapport};
+  \draw[->, shorten >=5pt] (bbot.east) -- (x.east)
+    node[midway, below, sloped] {observation};
+\end{tikzpicture}
+\end{center}
+
 \begin{I}
 
 \end{I}%
